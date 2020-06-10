@@ -8,13 +8,20 @@ namespace HA2_Liste
     {       
         public Excel excel;
         public String[] teams;
+        public Ergebnisse tore;
+        public Spielplan spiel;
+
         public Logik()
         {
             //Grafik
             //Teams Einlesen
             excel = new Excel();
             teams = excel.Einlesen_Teams();
-            excel.Schreibe_Spielplan();
+
+            excel.Schreibe_Spielplan(teams, spiel);
+            tore = new Ergebnisse();           
+            
+
             //Grafik
             //Saison durchlaufen (alles)
             //Spielplan erstellen (einlesen, spielplan erstellen, spielplan zurückgeben)

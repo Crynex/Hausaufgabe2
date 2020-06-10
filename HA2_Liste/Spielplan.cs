@@ -27,14 +27,15 @@ namespace HA2_Liste
 
                 if (i % 2 == 1)
                 {
-                    Console.WriteLine(string.Join(string.Empty, Heimspiel));
-                    Console.WriteLine("Draußen ist: " + draußen);
+                    //Console.WriteLine(string.Join(string.Empty, Heimspiel));
+                    //Console.WriteLine("Draußen ist: " + draußen);
                     Heimspiel = Obere_Liste_eins_weiter(Heimspiel, draußen);
                 }
+
                 else
                 {
-                    Console.WriteLine(string.Join(string.Empty, Auswärtsspiel));
-                    Console.WriteLine("Draußen ist: " + draußen);
+                    //Console.WriteLine(string.Join(string.Empty, Auswärtsspiel));
+                    //Console.WriteLine("Draußen ist: " + draußen);
                     Auswärtsspiel = Untere_Liste_ein_weiter(Auswärtsspiel, draußen);
                 }
 

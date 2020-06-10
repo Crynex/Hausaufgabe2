@@ -38,15 +38,27 @@ namespace HA2_Liste
             }
             return teams;
         }
-        public void Schreibe_Spielplan(/*ArrayMitSpielpan*/)
+        public void Schreibe_Spielplan(String[] teams, int[,,] spiele)
         {
+            //Zeilenr.
+            int z = 1;
+
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (var package = new ExcelPackage(new FileInfo("Teams.xlsx")))
             {
                 var sheet = package.Workbook.Worksheets["Spielplan"]; // Tabelle
-                for (int i = 2; i < 20; i++)
+                for (int i = 1; i < 35; i++)
                 {
-                    sheet.Cells[i, 2].Value = "FC Bayern";
+                    for (int k = 0; k < 9; k++)
+                    {
+                        sheet.Cells[z, 1].Value = i;
+                        sheet.Cells[z, 2].Value = k;
+                        sheet.Cells[z, 3].Value = teams[spiele[i, k, 0] - 1];
+                        sheet.Cells[z, 5].Value = teams[spiele[i, k, 1] - 1];
+                        z++;
+                    }
+
+                    z++;
                 }
 
                 //sheet.Cells[1, 1].Value = "Hellosfdsdfdsf World!"; // Schreiben
