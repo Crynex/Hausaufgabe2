@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "56zCj++CeGwtq0AtzT7GQ03KriFQ5d5tO8yNrIZoggvdfHZjxofv9KwYIFON0mW55vdcLTghDfwF6/q7t8LyXg==",
+  "dgSpecHash": "O1xldcxMGZVA8kS6QjpCsQR2SdFB2xi1kK5Yb2gWS7ibxFEIHSYqOGtvpwhrOEn+r/rbB9/r8M6TU9tL78BJ0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexb\\source\\repos\\HA2_Liste\\HA2_Liste\\HA2_Liste.csproj",
+  "projectFilePath": "C:\\Users\\alexb\\Documents\\GitHub\\Hausaufgabe2\\HA2_Liste\\HA2_Liste.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexb\\.nuget\\packages\\documentformat.openxml\\2.11.0\\documentformat.openxml.2.11.0.nupkg.sha512",
     "C:\\Users\\alexb\\.nuget\\packages\\epplus\\5.1.2\\epplus.5.1.2.nupkg.sha512",

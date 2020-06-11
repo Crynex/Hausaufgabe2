@@ -10,6 +10,7 @@ namespace HA2_Liste
         public String[] teams;
         public Ergebnisse tore;
         public Spielplan spiel;
+        public Punkte punkt; 
 
         public Logik()
         {
@@ -19,8 +20,8 @@ namespace HA2_Liste
             teams = excel.Einlesen_Teams();
 
             excel.Schreibe_Spielplan(teams, spiel);
-            tore = new Ergebnisse();           
-            
+            tore = new Ergebnisse();
+            punkt = new Punkte();
 
             //Grafik
             //Saison durchlaufen (alles)
