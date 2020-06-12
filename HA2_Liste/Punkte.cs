@@ -7,26 +7,23 @@ namespace HA2_Liste
 {
     class Punkte
     {
-        public char Points( int tore_a, int tore_b)
+        public int Punkt(int tore_a, int tore_b)
         {
-            char endstand = 'n';
-
+            int points = 0;
             if (tore_a == tore_b)
             {
-                endstand = 'u';
-                return endstand;
-            } 
-            else if (tore_a > tore_b)
+                points = 1;
+                return points;
+            }
+            else if(tore_a > tore_b)
             {
-                endstand = 's';
-                return endstand;
+                points = 3;
+                return points;
             }
             else
             {
-                return endstand;
-            }
-             
-           
+                return points;
+            }           
         }
     }
 }
