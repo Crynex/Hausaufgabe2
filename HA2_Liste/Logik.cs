@@ -8,20 +8,34 @@ namespace HA2_Liste
     {       
         public Excel excel;
         public String[] teams;
+        public int[,,] spiel;        
         public Ergebnisse tore;
-        public Spielplan spiel;
-        public Punkte punkt; 
+        public Spielplan spielplan;
+        public Punkte punkt;
+        public Spiel spielablauf;
 
         public Logik()
         {
             //Grafik
             //Teams Einlesen
             excel = new Excel();
-            teams = excel.Einlesen_Teams();
-
-            excel.Schreibe_Spielplan(teams, spiel);
+            spielplan = new Spielplan(18);
             tore = new Ergebnisse();
             punkt = new Punkte();
+
+            teams = excel.Einlesen_Teams();
+            spiel = spielplan.Plan_aufstellen();
+            spielablauf 
+            for(int i = 1; i < 35; i++)
+            {
+                for(int k = 0; k < 9; k++)
+                {
+
+                }
+            }
+            excel.Schreibe_Spielplan(teams, spiel /*ergebnisse*/);
+
+            //excel.Schreibe_Tabelle()
         }
     }
 }

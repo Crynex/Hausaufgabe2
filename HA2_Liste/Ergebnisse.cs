@@ -7,10 +7,11 @@ namespace HA2_Liste
 {
     class Ergebnisse
     {
-        public int Ergebnis()
+        public int Ergebnis(int min, int max)
         {
             Random zufall = new Random();
-            int Tore = zufall.Next(0, 6);
+            var max_temp = zufall.Next(min+1, max);
+            int Tore = zufall.Next(min, max_temp);
             Console.WriteLine(Tore);
             return Tore;
         }
