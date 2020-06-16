@@ -10,14 +10,14 @@ namespace HA2_Liste
 {
     class Excel
     {
-        private Ergebnisse ergebnisse;
-        public Spiel Mannschaft;
+        //private Ergebnisse ergebnisse;
+        //public Spiel Mannschaft;
         public Excel()
         {
             Directory.SetCurrentDirectory(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName);
             Directory.SetCurrentDirectory(@"..\");
             Directory.SetCurrentDirectory(@"Excel_Tabellen");
-            ergebnisse = new Ergebnisse();
+            //ergebnisse = new Ergebnisse();
         }
         public String[] Einlesen_Teams()
         {
@@ -58,9 +58,9 @@ namespace HA2_Liste
                         sheet.Cells[z, 1].Value = i;
                         sheet.Cells[z, 2].Value = k + 1;
                         sheet.Cells[z, 3].Value = teams[spiele[i, k, 0] - 1];
-                        sheet.Cells[z, 4].Value = this.Mannschaft.Tore;
+                        //sheet.Cells[z, 4].Value = 
                         sheet.Cells[z, 5].Value = teams[spiele[i, k, 1] - 1];
-                        sheet.Cells[z, 6].Value = 
+                        //sheet.Cells[z, 6].Value = 
 
                         z++;
                     }
@@ -80,7 +80,8 @@ namespace HA2_Liste
             }
         }
 
-        public void Schreibe_Tabelle()
+        
+        /*public void Schreibe_Tabelle()
         {
             //Zeilenr.
             int z = 1;
@@ -110,6 +111,6 @@ namespace HA2_Liste
                 //package.Save();            
 
             }
-        }
+        }*/
     }
 }
