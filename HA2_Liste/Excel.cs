@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Presentation;
 using OfficeOpenXml;
@@ -12,6 +13,7 @@ namespace HA2_Liste
     {
         //private Ergebnisse ergebnisse;
         //public Spiel Mannschaft;
+        // holt Excel-Tabelle
         public Excel()
         {
             Directory.SetCurrentDirectory(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName);
@@ -19,6 +21,8 @@ namespace HA2_Liste
             Directory.SetCurrentDirectory(@"Excel_Tabellen");
             //ergebnisse = new Ergebnisse();
         }
+
+        // Teamdaten aus Excel-Tabelle lesen
         public String[] Einlesen_Teams()
         {
             String[] teams = new String[18];
@@ -29,28 +33,22 @@ namespace HA2_Liste
                 for (int i = 0; i < 18; i++)
                 {
                     teams[i] = sheet.Cells[i + 2, 1].Value.ToString();
-                }
-
-                //sheet.Cells[1, 1].Value = "Hellosfdsdfdsf World!"; // Schreiben
-
-
-                //package.SaveAs(new FileInfo("Test.xlsx"));
-
-                // Save to file
-                //package.Save();            
+                }                                       
 
             }
             return teams;
         }
-        public void Schreibe_Spielplan(String[] teams, int[,,] spiele)
+
+
+        public void Schreibe_Spiel(String[] teams, int[,,] spiele, AblaufSpiel ablauf)
         {
-            //Zeilenr.
+            //Zeilenr. Start: zeile 2
             int z = 2;
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (var package = new ExcelPackage(new FileInfo("Teams.xlsx")))
             {
-                var sheet = package.Workbook.Worksheets["Spielplan"]; // Tabelle
+                var sheet = package.Workbook.Worksheets["Spielplan"];
                 for (int i = 1; i < 35; i++)
                 {
                     for (int k = 0; k < 9; k++)
@@ -58,9 +56,10 @@ namespace HA2_Liste
                         sheet.Cells[z, 1].Value = i;
                         sheet.Cells[z, 2].Value = k + 1;
                         sheet.Cells[z, 3].Value = teams[spiele[i, k, 0] - 1];
-                        //sheet.Cells[z, 4].Value = 
+                        sheet.Cells[z, 4].Value = ablauf.GetSpieltore(i,k,0);
                         sheet.Cells[z, 5].Value = teams[spiele[i, k, 1] - 1];
-                        //sheet.Cells[z, 6].Value = 
+                        sheet.Cells[z, 6].Value = ablauf.GetSpieltore(i,k,1);
+
 
                         z++;
                     }
@@ -68,49 +67,28 @@ namespace HA2_Liste
                     z++;
                 }
 
-                //sheet.Cells[1, 1].Value = "Hellosfdsdfdsf World!"; // Schreiben
-                //Console.WriteLine("|" + teams[17] + "|"); // Auslesen
+                var sheet2 = package.Workbook.Worksheets["Tabelle"];
 
+                int z2 = 2;
 
-                package.SaveAs(new FileInfo("Teams.xlsx"));
+                for (int i = 0; i < 18; i++)
+                {
+                    sheet2.Cells[z2, 1].Value = teams[i];
+                    i++;
+                    sheet2.Cells[z2, 2].Value = ablauf.GetAnzSpiele(i);
+                    sheet2.Cells[z2, 3].Value = ablauf.GetEndepunkte(i);
+                    sheet2.Cells[z2, 4].Value = ablauf.GetSiege(i);
+                    sheet2.Cells[z2, 5].Value = ablauf.GetUnentschieden(i);
+                    sheet2.Cells[z2, 6].Value = ablauf.GetNiederlagen(i);
+                    sheet2.Cells[z2, 7].Value = ablauf.GetTore(i);
+                    sheet2.Cells[z2, 8].Value = ablauf.GetGegentore(i);
+                    i--;
+                    z2++;
+                }               
 
-                // Save to file
-                //package.Save();            
+                package.SaveAs(new FileInfo("Teams.xlsx"));                         
 
             }
         }
-
-        
-        /*public void Schreibe_Tabelle()
-        {
-            //Zeilenr.
-            int z = 1;
-
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            using (var package = new ExcelPackage(new FileInfo("Teams.xlsx")))
-            {
-                var sheet = package.Workbook.Worksheets["Mannschaften"]; // Tabelle
-                for (int i = 1; i < 19; i++)
-                {
-                    for (int k = 0; k < 9; k++)
-                    {
-                        
-                        z++;
-                    }
-
-                    z++;
-                }
-
-                //sheet.Cells[1, 1].Value = "Hellosfdsdfdsf World!"; // Schreiben
-                //Console.WriteLine("|" + teams[17] + "|"); // Auslesen
-
-
-                package.SaveAs(new FileInfo("Teams.xlsx"));
-
-                // Save to file
-                //package.Save();            
-
-            }
-        }*/
     }
 }

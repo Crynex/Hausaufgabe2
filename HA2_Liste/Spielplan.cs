@@ -25,7 +25,7 @@ namespace HA2_Liste
             for (int i = 1; i <= (referenz - 1) * 2; i++) //i ist Spieltag
             {
 
-                Console.WriteLine("Spieltag: " + i);
+                //Console.WriteLine("Spieltag: " + i);
 
                 if (i % 2 == 1)
                 {
@@ -41,12 +41,12 @@ namespace HA2_Liste
                     Auswärtsspiel = Untere_Liste_ein_weiter(Auswärtsspiel, draußen);
                 }
 
-                Console.WriteLine(draußen + " vs " + referenz);
+                //Console.WriteLine(draußen + " vs " + referenz);
                 spiele[i, 8, 0] = draußen;
                 spiele[i, 8, 1] = referenz;
                 for (int k = 0; k < (referenz / 2) - 1; k++) //K Spiel am Spieltag
                 {
-                    Console.WriteLine(Heimspiel[k] + " vs " + Auswärtsspiel[k]);
+                    //Console.WriteLine(Heimspiel[k] + " vs " + Auswärtsspiel[k]);
                     spiele[i, k, 0] = Heimspiel[k];
                     //Console.WriteLine("Länge Array: " + Auswärtsspiel.Length);
 

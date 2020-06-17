@@ -23,10 +23,10 @@ namespace HA2_Liste
             spiel = spielplan.Plan_aufstellen();
 
             ablauf = new AblaufSpiel(teams, spiel);
+            ablauf.Ablauf();
 
-
-            excel.Schreibe_Spielplan(teams, spiel /*ergebnisse*/);
-
+            excel.Schreibe_Spiel(teams, spiel, ablauf);
+            //excel.Schreibe_Tabelle(teams, spiel);
             
         }
     }
