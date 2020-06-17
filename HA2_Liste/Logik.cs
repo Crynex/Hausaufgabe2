@@ -25,8 +25,7 @@ namespace HA2_Liste
             ablauf = new AblaufSpiel(teams, spiel);
             ablauf.Ablauf();
 
-            excel.Schreibe_Spiel(teams, spiel, ablauf);
-            //excel.Schreibe_Tabelle(teams, spiel);
+            excel.Schreibe_Spiel(teams, spiel, ablauf);           
             
         }
     }

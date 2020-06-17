@@ -11,10 +11,8 @@ namespace HA2_Liste
     {
         
         static void Main(string[] args)
-        {
-                 
-            new Logik();
- 
+        {                 
+            new Logik(); 
         }
     }    
 }

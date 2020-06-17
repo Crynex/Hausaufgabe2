@@ -20,8 +20,7 @@ namespace HA2_Liste_Ergebn
         {
             Random zufall = new Random();
             var max_temp = zufall.Next(min+1, max);
-            int Tore = zufall.Next(min, max_temp);
-            //Console.WriteLine(Tore);
+            int Tore = zufall.Next(min, max_temp);           
             return Tore;
         }
     }

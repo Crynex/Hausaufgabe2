@@ -33,7 +33,7 @@ namespace HA2_Liste
                 Niederlage = n;
             }
 
-            //Marcelo
+           
             public override string ToString()
             {
                 return String.Format("Mannschaft, Anzahl Spiele: {0}", AnzSpiele);
@@ -76,9 +76,7 @@ namespace HA2_Liste
                 for(int k = 0; k < 9; k++)
                 {
                     //Spielaufruf
-                    heim = mannschaft[spiel[i,k,0]];
-                    //Console.WriteLine("Test2:" + mannschaft[spiel[i, k, 0]].AnzSpiele);
-                    //Console.WriteLine("Test3:" + heim.AnzSpiele);
+                    heim = mannschaft[spiel[i,k,0]];                    
                     gast = mannschaft[spiel[i,k,1]];
 
 
