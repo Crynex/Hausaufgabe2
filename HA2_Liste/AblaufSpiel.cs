@@ -33,11 +33,11 @@ namespace HA2_Liste
                 Niederlage = n;
             }
 
-           
+           /*
             public override string ToString()
             {
                 return String.Format("Mannschaft, Anzahl Spiele: {0}", AnzSpiele);
-            }
+            }*/
         }
 
         public string[] teams;
@@ -90,16 +90,19 @@ namespace HA2_Liste
                     gast.Gegentore = heim.Tore;
                     */
 
-                    Console.WriteLine("Test: "+spiel[i, k, 0]);               
+                    //Spielablauf                               
                     tore[i, k, 0] = ergebnis.Ergebnis(0, 8);
+                    heim.Tore = tore[i, k, 0];
                     mannschaft[spiel[i, k, 0]].spieltore = (int) tore[i, k, 0];
                     mannschaft[spiel[i, k, 0]].Tore = mannschaft[spiel[i, k, 0]].Tore + mannschaft[spiel[i, k, 0]].spieltore;
                     tore[i, k, 1] = ergebnis.Ergebnis(0, 8);
+                    gast.Tore = tore[i, k, 1];
                     mannschaft[spiel[i, k, 1]].spieltore = tore[i, k, 1];
                     mannschaft[spiel[i, k, 1]].Tore += mannschaft[spiel[i, k, 1]].spieltore;
                     mannschaft[spiel[i, k, 0]].Gegentore = mannschaft[spiel[i, k, 1]].Tore;
                     mannschaft[spiel[i, k, 1]].Gegentore = mannschaft[spiel[i, k, 0]].Tore;
 
+                    //Ergebnis Vergleichen
                     if (heim.Tore == gast.Tore)
                     {
                         /*
@@ -126,7 +129,7 @@ namespace HA2_Liste
                         mannschaft[spiel[i, k, 0]].Siege += 1;
                         mannschaft[spiel[i, k, 1]].Niederlage += 1;
                     }
-                    else
+                    else if (heim.Tore < gast.Tore)
                     {
                         /*
                         heim.Endpunkte += 0;
@@ -148,6 +151,8 @@ namespace HA2_Liste
                 }
             }
         }
+
+        //Abruf Ergebnisswerte
         public int GetSpieltore(int Spieltag, int Spielnr, int Mannschaft)
         {
             return tore[Spieltag, Spielnr, Mannschaft];

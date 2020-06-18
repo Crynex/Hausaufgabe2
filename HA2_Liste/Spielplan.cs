@@ -56,7 +56,7 @@ namespace HA2_Liste
                 
             }
 
-
+            //Liste eins weiter
             int[] Obere_Liste_eins_weiter(int[] int_array, int draußen)
             {
                 var länge = int_array.Length;
@@ -72,7 +72,7 @@ namespace HA2_Liste
                 return temp_list;
             }
 
-
+            //Liste eins weiter
             int[] Untere_Liste_ein_weiter(int[] int_array, int draußen)
             {
 

@@ -39,7 +39,7 @@ namespace HA2_Liste
             return teams;
         }
 
-
+        //Excel beschreiben
         public void Schreibe_Spiel(String[] teams, int[,,] spiele, AblaufSpiel ablauf)
         {
             //Zeilenr. Start: zeile 2
@@ -48,11 +48,13 @@ namespace HA2_Liste
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (var package = new ExcelPackage(new FileInfo("Teams.xlsx")))
             {
+                //Tabellenblatt Spielplan
                 var sheet = package.Workbook.Worksheets["Spielplan"];
                 for (int i = 1; i < 35; i++)
                 {
                     for (int k = 0; k < 9; k++)
                     {
+                        //Schreibe Spielplan und Tore in Tabellenblatt
                         sheet.Cells[z, 1].Value = i;
                         sheet.Cells[z, 2].Value = k + 1;
                         sheet.Cells[z, 3].Value = teams[spiele[i, k, 0] - 1];
@@ -67,12 +69,14 @@ namespace HA2_Liste
                     z++;
                 }
 
+                //Tabellenblatt Tabelle
                 var sheet2 = package.Workbook.Worksheets["Tabelle"];
 
                 int z2 = 2;
 
                 for (int i = 0; i < 18; i++)
                 {
+                    //Schreibe Tabelle und Ergebnisse in Tabellenblatt
                     sheet2.Cells[z2, 1].Value = teams[i];
                     i++;
                     sheet2.Cells[z2, 2].Value = ablauf.GetAnzSpiele(i);

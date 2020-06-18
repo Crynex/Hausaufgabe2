@@ -16,6 +16,7 @@ namespace HA2_Liste_Ergebn
             scoremax = max;
         }
 
+        //Zufällige Anzahl an Toren
         public int Ergebnis(int min, int max)
         {
             Random zufall = new Random();
