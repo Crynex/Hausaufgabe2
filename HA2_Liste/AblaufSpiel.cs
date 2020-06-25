@@ -157,7 +157,6 @@ namespace HA2_Liste
         {
             return tore[Spieltag, Spielnr, Mannschaft];
         }
-
         public int GetAnzSpiele(int ManschaftsNummer)
         {
             return mannschaft[ManschaftsNummer].AnzSpiele;            
