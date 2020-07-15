@@ -3,25 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HA2_Liste_Ergebn
+namespace HA2_Liste
 {
-    public class Ergebnisse
+    class Ergebnisse
     {
-        int scoremin;
-        int scoremax;
-
-        public Ergebnisse(int min, int max)
-        {
-            scoremin = min;
-            scoremax = max;
-        }
-
-        //Zufällige Anzahl an Toren
-        public int Ergebnis(int min, int max)
+        public int Ergebnis()
         {
             Random zufall = new Random();
-            var max_temp = zufall.Next(min+1, max);
-            int Tore = zufall.Next(min, max_temp);           
+            int Tore = zufall.Next(0, 6);
+            Console.WriteLine(Tore);
             return Tore;
         }
     }

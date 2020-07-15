@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexb\\OneDrive\\Documents\\GitHub\\Hausaufgabe2\\HA2_Liste\\HA2_Liste.csproj": {}
+    "C:\\Users\\alexb\\source\\repos\\HA2_Liste\\HA2_Liste\\HA2_Liste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexb\\OneDrive\\Documents\\GitHub\\Hausaufgabe2\\HA2_Liste\\HA2_Liste.csproj": {
+    "C:\\Users\\alexb\\source\\repos\\HA2_Liste\\HA2_Liste\\HA2_Liste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexb\\OneDrive\\Documents\\GitHub\\Hausaufgabe2\\HA2_Liste\\HA2_Liste.csproj",
+        "projectUniqueName": "C:\\Users\\alexb\\source\\repos\\HA2_Liste\\HA2_Liste\\HA2_Liste.csproj",
         "projectName": "HA2_Liste",
-        "projectPath": "C:\\Users\\alexb\\OneDrive\\Documents\\GitHub\\Hausaufgabe2\\HA2_Liste\\HA2_Liste.csproj",
+        "projectPath": "C:\\Users\\alexb\\source\\repos\\HA2_Liste\\HA2_Liste\\HA2_Liste.csproj",
         "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexb\\OneDrive\\Documents\\GitHub\\Hausaufgabe2\\HA2_Liste\\obj\\",
+        "outputPath": "C:\\Users\\alexb\\source\\repos\\HA2_Liste\\HA2_Liste\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
